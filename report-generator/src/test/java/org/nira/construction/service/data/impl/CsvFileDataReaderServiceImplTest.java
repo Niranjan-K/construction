@@ -42,7 +42,8 @@ public class CsvFileDataReaderServiceImplTest {
       "invalid_number_build_duration.csv, invalid data for Build Duration",
       "empty_geozone.csv, invalid data for Geozone",
       "empty_team_code.csv, invalid data for Team Code",
-      "empty_project_code.csv, invalid data for Project Code"
+      "empty_project_code.csv, invalid data for Project Code",
+      "zero_customer_id.csv, invalid data for Customer Id"
   })
   void testReadFile_withInvalidCsvFile_throwConstructionException(String filename, String errorMessage) {
     ConstructionException exception = assertThrows(ConstructionException.class,

@@ -29,9 +29,12 @@ public class ConstructionInfo {
   }
 
   private Integer getIntegerValue(final String data, final String fieldName) {
-    //ToDo: add validation for "0"
     try {
-      return Integer.parseInt(data);
+      Integer value = Integer.parseInt(data.trim());
+      if (value == 0) {
+        throw new ConstructionException(String.format(ERROR_MESSAGE, fieldName));
+      }
+      return value;
     } catch (NumberFormatException e) {
       throw new ConstructionException(String.format(ERROR_MESSAGE, fieldName));
     }
