@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'construction'
-include('app')
+include('report-generator')
